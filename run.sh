@@ -1,6 +1,10 @@
 #!/bin/bash
 
-for f in $HOME/dotfiles/*
+for f in ${HOME}/dotfiles/files/*
 do
-	ln -s "$f" "$HOME/.${f##*/}"
+    if [ -h "$HOME/.${f##*/}" ]
+        then 
+            rm -f "$HOME/.${f##*/}"
+    fi
+    ln -s "$f" "$HOME/.${f##*/}"
 done
