@@ -3,9 +3,28 @@
 " 2. LatexBox
 " 3. Colorscheme - molokai
 " 4. vim-sensible
+" 5. vim-airline
+" 6. vim-autoclose -
+" 7. ctrp.vim
 
-" Pathogen runtimepath management
-execute pathogen#infect()
+" Reload .vimrc if changed
+autocmd! bufwritepost .vimrc source %
+
+" Not compatible with VI
+set nocompatible
+
+" Indentation based on previous line
+set autoindent
+
+" C indentation
+set smartindent
+
+" intelligent comments
+set comments=sl:/*,mb:\ *,elx:\ */
+
+" use intelligent file completion like in the bash
+set wildmode=longest:full
+set wildmenu
 
 " Enable line numbers
 set number
@@ -16,9 +35,18 @@ syntax on
 " Basic settings 
 filetype plugin indent on
 
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Pathogen runtimepath management
+execute pathogen#infect()
+
 " Theme settings
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
+
