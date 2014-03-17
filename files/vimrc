@@ -7,6 +7,7 @@
 " 6. vim-autoclose -
 " 7. ctrp.vim
 " 8. vim-fugitive
+" 9. nerdcommenter
 
 " Reload .vimrc if changed
 autocmd! bufwritepost .vimrc source %
@@ -14,11 +15,10 @@ autocmd! bufwritepost .vimrc source %
 " Not compatible with VI
 set nocompatible
 
-" Indentation based on previous line
+" Indentation 
 set autoindent
-
-" C indentation
 set smartindent
+set cindent
 
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -63,4 +63,3 @@ let g:airline_powerline_fonts = 1
 
 " Airline theme to match
 let g:airline_theme = "molokai"
-
