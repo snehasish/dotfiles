@@ -8,6 +8,8 @@
 " 7. ctrp.vim
 " 8. vim-fugitive
 " 9. nerdcommenter
+" 10. youcompleteme
+" 11. auto-pairs
 
 " Reload .vimrc if changed
 autocmd! bufwritepost .vimrc source %
@@ -49,6 +51,7 @@ set noshowmode
 
 " Pathogen runtimepath management
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " Theme settings
 colorscheme molokai
@@ -63,3 +66,12 @@ let g:airline_powerline_fonts = 1
 
 " Airline theme to match
 let g:airline_theme = "molokai"
+
+" Reindent the entire file
+map <F7> mzgg=G`z<CR>
+
+" Open empty files in insert mode
+autocmd VimEnter * if empty(expand("%")) | startinsert | endif
+
+" You complete me
+
