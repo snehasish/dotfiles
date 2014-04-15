@@ -10,6 +10,9 @@
 " 9. nerdcommenter
 " 10. youcompleteme
 " 11. auto-pairs
+" 12. tabline
+" 13. vim-markdown
+
 
 " Reload .vimrc if changed
 autocmd! bufwritepost .vimrc source %
@@ -49,6 +52,12 @@ set ttimeoutlen=50
 " Remove the default mode indicator because we have airline!
 set noshowmode
 
+" Switch buffers without saving
+set hidden
+
+" Case insensitive search by default
+set ignorecase
+
 " Pathogen runtimepath management
 execute pathogen#infect()
 execute pathogen#helptags()
@@ -67,6 +76,9 @@ let g:airline_powerline_fonts = 1
 " Airline theme to match
 let g:airline_theme = "molokai"
 
+" Airline tabs for open buffers -- Install tabline
+let g:airline#extensions#tabline#enabled = 1
+
 " Reindent the entire file
 map <F7> mzgg=G`z<CR>
 
@@ -75,3 +87,5 @@ autocmd VimEnter * if empty(expand("%")) | startinsert | endif
 
 " You complete me
 
+" Vim markdown folding disabled
+let g:vim_markdown_folding_disabled=1
