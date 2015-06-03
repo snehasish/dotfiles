@@ -5,14 +5,13 @@
 " 4. vim-sensible
 " 5. vim-airline
 " 6. vim-autoclose -
-" 7. ctrp.vim
+" 7. ctrlp.vim
 " 8. vim-fugitive
 " 9. nerdcommenter
 " 10. youcompleteme
 " 11. auto-pairs
 " 12. tabline
 " 13. vim-markdown
-
 
 " Reload .vimrc if changed
 autocmd! bufwritepost .vimrc source %
@@ -58,6 +57,12 @@ set hidden
 " Case insensitive search by default
 set ignorecase
 
+" Incremental Search
+set incsearch
+
+" Set smartcase search
+set smartcase
+
 " Pathogen runtimepath management
 execute pathogen#infect()
 execute pathogen#helptags()
@@ -96,3 +101,23 @@ autocmd VimEnter * if empty(expand("%")) | startinsert | endif
 
 " Vim markdown folding disabled
 let g:vim_markdown_folding_disabled=1
+
+" No Arrowkeys
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+
+" Next and previous buffer
+nmap <C-n> :bnext<CR>
+nmap <C-m> :bprev<CR>
+
+" Split file, 2 columns with scroll bind
+noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
+" CTRLP settings
+let g:ctrlp_custom_ignore ='\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_dotfiles = 0
+
+" Relative Line Numbers
+set relativenumber
