@@ -121,3 +121,12 @@ let g:ctrlp_dotfiles = 0
 
 " Relative Line Numbers
 set relativenumber
+
+" Always show gutter so that YCM syntax
+" error highlight doesnt move text L/R
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
+" Autoclose the preview window after 
+" leaving insert mode for YCM
+let g:ycm_autoclose_preview_window_after_insertion = 1
