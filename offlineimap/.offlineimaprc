@@ -8,7 +8,7 @@ maxsyncaccounts = 1
 localrepository = sfu-local
 remoterepository = sfu-remote
 status_backend = sqlite
-autorefresh = 1
+autorefresh = 2.5
 
 
 [Repository sfu-local]
@@ -22,7 +22,6 @@ remotehost = imap.sfu.ca
 remoteuser = ska124@sfu.ca
 ssl = yes
 remoteport = 993
-remotepasseval = get_lpass()
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 2
 
