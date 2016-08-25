@@ -1,0 +1,28 @@
+[general]
+accounts = sfu
+metadata = ~/.offlineimap
+pythonfile = ~/.offlineimaphelper.py
+maxsyncaccounts = 1
+
+[Account sfu]
+localrepository = sfu-local
+remoterepository = sfu-remote
+status_backend = sqlite
+autorefresh = 1
+
+
+[Repository sfu-local]
+type = Maildir
+localfolders = ~/Mail/sfu
+
+
+[Repository sfu-remote]
+type = IMAP
+remotehost = imap.sfu.ca
+remoteuser = ska124@sfu.ca
+ssl = yes
+remoteport = 993
+remotepasseval = get_lpass()
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+maxconnections = 2
+

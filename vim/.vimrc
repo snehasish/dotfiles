@@ -35,6 +35,9 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'godlygeek/tabular'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 
 call vundle#end()    
 filetype plugin indent on  
@@ -132,10 +135,6 @@ nmap <C-m> :bprev<CR>
 " Split file, 2 columns with scroll bind
 noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-" CTRLP settings
-let g:ctrlp_custom_ignore ='\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_dotfiles = 0
-
 " Relative Line Numbers
 set relativenumber
 
@@ -148,3 +147,23 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 " leaving insert mode for YCM
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_always_populate_location_list = 1
+
+" Enable spell checking for certain file types
+autocmd FileType latex,tex,md,markdown setlocal spell
+
+" Terminal settings for neovim
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" Options for notes
+let g:notes_directories = ['~/Dropbox/notes']
+let g:notes_suffix = '.txt'
+
+" Options for mutt
+setlocal fo+=aw
