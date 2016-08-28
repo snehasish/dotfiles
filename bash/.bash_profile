@@ -10,8 +10,6 @@ export LIBRARY_PATH=${HOME}/pkgs/lib
 
 alias ls="ls --color"
 
-source ${HOME}/.git-completion.bash
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1=" \[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "

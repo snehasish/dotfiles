@@ -13,7 +13,7 @@ autorefresh = 2.5
 
 [Repository sfu-local]
 type = Maildir
-localfolders = ~/Mail/sfu
+localfolders = ~/mail/sfu
 
 
 [Repository sfu-remote]
@@ -25,3 +25,10 @@ remoteport = 993
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 2
 
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"

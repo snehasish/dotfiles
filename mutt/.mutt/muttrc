@@ -1,0 +1,80 @@
+set mbox_type=maildir
+set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set spell spelllang=en"'
+set send_charset="utf-8"
+set realname = "Snehasish Kumar"
+set from = "ska124@sfu.ca"
+set use_from = no
+set envelope_from ="yes"
+set sleep_time = 0
+
+set folder = "~/mail"
+set spoolfile = "+sfu/INBOX"
+set record = "+sfu/Sent\ Items"
+set postponed = "+sfu/Drafts"
+
+set pager_index_lines=15
+set sort='threads'
+set sort_aux='reverse-last-date-received'
+
+set smart_wrap
+set markers=no
+
+unset help
+
+ignore X-Mailer 
+#unignore From To Reply-To Cc Bcc Subject Date Organization X-Label X-Mailer User-Agent
+
+set date_format="%y-%m-%d %T"
+
+bind index l display-message
+bind index gg first-entry
+bind index G last-entry
+bind index h noop 
+bind index J next-entry
+bind index K last-entry
+
+bind pager h exit 
+bind pager gg top
+bind pager G bottom
+bind pager j next-line
+bind pager k previous-line
+
+bind browser l select-entry
+bind browser L view-file
+bind browser gg first-entry
+bind browser G last-entry
+bind browser h exit
+
+bind attach h exit
+bind attach e edit-type # Edit MIME Types
+bind attach l view-attach
+
+set sidebar_visible = yes
+set sidebar_short_path = yes
+set sidebar_folder_indent = yes 
+set sidebar_new_mail_only = yes 
+
+set strict_threads=yes
+set status_on_top=yes
+set narrow_tree=yes
+#folder-hook . "exec collapse-all"
+
+set my_index_format_pre='set index_format=" [%?[d?%[ %T ]&%[%Y-%m-%d]?] %-30.30'
+set my_index_format_post=' |%Z| %?M?+%M? %s"'
+
+folder-hook .*[sS]ent.* "$my_index_format_pre"t"$my_index_format_post"
+folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
+
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]─────[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+unset pager_format 
+
+set mailcap_path=~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+source ~/.mutt/mailboxes
+source ~/.mutt/mutt-colors-solarized-dark-256.muttrc
+
+# vim: syntax=muttrc
