@@ -1,8 +1,8 @@
 [general]
-accounts = sfu
+accounts = sfu,zoho
 metadata = ~/.offlineimap
 pythonfile = ~/.offlineimaphelper.py
-maxsyncaccounts = 1
+maxsyncaccounts = 2
 
 [Account sfu]
 localrepository = sfu-local
@@ -10,11 +10,9 @@ remoterepository = sfu-remote
 status_backend = sqlite
 autorefresh = 2.5
 
-
 [Repository sfu-local]
 type = Maildir
 localfolders = ~/mail/sfu
-
 
 [Repository sfu-remote]
 type = IMAP
@@ -25,10 +23,29 @@ remoteport = 993
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 2
 
-[mbnames]
-enabled = yes
-filename = ~/.mutt/mailboxes
-header = "mailboxes "
-peritem = "+%(accountname)s/%(foldername)s"
-sep = " "
-footer = "\n"
+[Account zoho]
+localrepository = zoho-local
+remoterepository = zoho-remote
+status_backend = sqlite
+autorefresh = 2.5
+
+[Repository zoho-local]
+type = Maildir
+localfolders = ~/mail/zoho
+
+[Repository zoho-remote]
+type = IMAP
+remotehost = imappro.zoho.com
+remoteuser = mail@snehasish.net 
+ssl = yes
+remoteport = 993
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+maxconnections = 2
+
+# [mbnames]
+# enabled = yes
+# filename = ~/.mutt/mailboxes
+# header = "mailboxes "
+# peritem = "+%(accountname)s/%(foldername)s"
+# sep = " "
+# footer = "\n"

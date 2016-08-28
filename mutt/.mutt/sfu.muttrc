@@ -1,0 +1,10 @@
+
+set from = "ska124@sfu.ca"
+set record = "+sfu/Sent"
+set postponed = "+sfu/Drafts"
+
+macro index D \
+    "<save-message>+sfu/Trash<enter>" \
+    "move message to the trash"
+
+# vim: syntax=muttrc

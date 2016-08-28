@@ -1,0 +1,10 @@
+
+set from = "mail@snehasish.net"
+set record = "+zoho/Sent"
+set postponed = "+zoho/Drafts"
+
+macro index D \
+    "<save-message>+zoho/Trash<enter>" \
+    "move message to the trash"
+
+# vim: syntax=muttrc

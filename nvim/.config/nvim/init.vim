@@ -1,18 +1,3 @@
-" Installed scripts
-" 1. Pathogen
-" 2. LatexBox
-" 3. Colorscheme - molokai
-" 4. vim-sensible
-" 5. vim-airline
-" 6. vim-autoclose -
-" 7. ctrlp.vim
-" 8. vim-fugitive
-" 9. nerdcommenter
-" 10. youcompleteme
-" 11. auto-pairs
-" 12. tabline
-" 13. vim-markdown
-
 " Reload .vimrc if changed
 autocmd! bufwritepost .vimrc source %
 
@@ -83,9 +68,6 @@ set incsearch
 " Set smartcase search
 set smartcase
 
-" Pathogen runtimepath management
-" execute pathogen#infect()
-" execute pathogen#helptags()
 
 " Theme settings
 colorscheme molokai
@@ -115,7 +97,7 @@ nmap n nzz
 nmap N Nzz
 
 " Open empty files in insert mode
-autocmd VimEnter * if empty(expand("%")) | startinsert | endif
+" autocmd VimEnter * if empty(expand("%")) | startinsert | endif
 
 " You complete me
 
