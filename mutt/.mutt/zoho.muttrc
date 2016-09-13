@@ -3,6 +3,8 @@ set from = "mail@snehasish.net"
 set record = "+zoho/Sent"
 set postponed = "+zoho/Drafts"
 
+set sendmail = "/usr/bin/msmtp -a zoho"
+
 macro index D \
     "<save-message>+zoho/Trash<enter>" \
     "move message to the trash"

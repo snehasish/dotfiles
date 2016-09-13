@@ -3,6 +3,10 @@ set from = "ska124@sfu.ca"
 set record = "+sfu/Sent"
 set postponed = "+sfu/Drafts"
 
+set sendmail = "/usr/bin/msmtp -a sfu"
+
+# set smtp_url="smtps://ska124@sfu.ca@mailgate.sfu.ca:465"
+
 macro index D \
     "<save-message>+sfu/Trash<enter>" \
     "move message to the trash"
