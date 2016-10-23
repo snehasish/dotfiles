@@ -147,3 +147,6 @@ nnoremap <A-l> <C-w>l
 let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_suffix = '.txt'
 
+
+" Settings for vimtex
+let g:vimtex_view_method = 'mupdf'

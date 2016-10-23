@@ -7,6 +7,7 @@ set envelope_from=yes
 set sleep_time=0
 set reverse_name=yes
 
+set edit_headers=yes
 
 set folder = "~/mail"
 
@@ -20,6 +21,7 @@ set smart_wrap
 set markers=no
 
 set fast_reply=yes
+set include=yes
 set rfc2047_parameters
 
 unset help
@@ -78,6 +80,8 @@ sidebar_whitelist '/home/ska124/mail/zoho/Sent'
 bind index,pager \Cj sidebar-next
 bind index,pager \Ck sidebar-prev
 bind index,pager \Ch sidebar-open
+
+bind index,pager R group-reply
 
 set status_on_top=yes
 set narrow_tree=yes
