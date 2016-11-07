@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if I am at home -- more specifically if the NAS is online
+
+ssh nas-chroot exit 77
+if [ $? -ne 77 ]; then
+    notify-send "Skip backup" 
+else
+    notify-send "Backup Started" `date +%H:%M`
+
+    # Export BORG_REPO and BORG_PASSPHRASE
+    source ${HOME}/.borg_secret 
+
+    borg create -C lz4 -v --stats              \
+    ::'{hostname}-{now:%Y-%m-%d}'              \
+    ${HOME}                                    \
+    --exclude '/home/*/.cache'           
+
+    borg prune -v --prefix '{hostname}-'             \
+    --keep-daily=7 --keep-weekly=4 --keep-monthly=6  \
+    --keep-yearly=-1
+
+    if [ $? -ne 0 ]; then
+        notify-send "Error" "Check journalctl"
+    else 
+        notify-send "Backup Complete"
+    fi
+fi

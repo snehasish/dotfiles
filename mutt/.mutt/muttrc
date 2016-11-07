@@ -9,7 +9,7 @@ set reverse_name=yes
 
 set edit_headers=yes
 
-set folder = "~/mail"
+set folder = "~/Mail"
 
 set header_cache="~/.mutt/cache/headers"
 
@@ -65,17 +65,17 @@ set sidebar_new_mail_only = yes
 
 # SFU Mailboxes
 sidebar_whitelist 'SFU'
-sidebar_whitelist '/home/ska124/mail/sfu/INBOX'
-sidebar_whitelist '/home/ska124/mail/sfu/Submissions'
-sidebar_whitelist '/home/ska124/mail/sfu/Travel'
-sidebar_whitelist '/home/ska124/mail/sfu/Drafts'
-sidebar_whitelist '/home/ska124/mail/sfu/Sent'
+sidebar_whitelist '/home/ska124/Mail/sfu/INBOX'
+sidebar_whitelist '/home/ska124/Mail/sfu/Submissions'
+sidebar_whitelist '/home/ska124/Mail/sfu/Travel'
+sidebar_whitelist '/home/ska124/Mail/sfu/Drafts'
+sidebar_whitelist '/home/ska124/Mail/sfu/Sent'
 
 # ZOHO Mailboxes
 sidebar_whitelist 'ZOHO'
-sidebar_whitelist '/home/ska124/mail/zoho/INBOX'
-sidebar_whitelist '/home/ska124/mail/zoho/RSVP'
-sidebar_whitelist '/home/ska124/mail/zoho/Sent'
+sidebar_whitelist '/home/ska124/Mail/zoho/INBOX'
+sidebar_whitelist '/home/ska124/Mail/zoho/RSVP'
+sidebar_whitelist '/home/ska124/Mail/zoho/Sent'
 
 bind index,pager \Cj sidebar-next
 bind index,pager \Ck sidebar-prev

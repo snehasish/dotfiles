@@ -12,7 +12,7 @@ autorefresh = 2.5
 
 [Repository sfu-local]
 type = Maildir
-localfolders = ~/mail/sfu
+localfolders = ~/Mail/sfu
 
 [Repository sfu-remote]
 type = IMAP
@@ -31,7 +31,7 @@ autorefresh = 2.5
 
 [Repository zoho-local]
 type = Maildir
-localfolders = ~/mail/zoho
+localfolders = ~/Mail/zoho
 
 [Repository zoho-remote]
 type = IMAP

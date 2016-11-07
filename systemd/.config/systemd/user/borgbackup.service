@@ -1,0 +1,8 @@
+[Unit]
+Description=Borg Backup Service
+
+[Service]
+EnvironmentFile=%h/.config/systemd/user/env.conf
+Type=simple
+ExecStart=/bin/bash %h/.borgbackup  
+
