@@ -8,6 +8,9 @@ if [ $? -ne 77 ]; then
 else
     notify-send "Backup Started" `date +%H:%M`
 
+    dconf dump /org/cinnamon/ > ${HOME}/.cinnamon.dconf
+    dpkg --get-selections > ${HOME}/.packages.list
+
     # Export BORG_REPO and BORG_PASSPHRASE
     source ${HOME}/.borg_secret 
 
@@ -16,9 +19,9 @@ else
     ${HOME}                                    \
     --exclude '/home/*/.cache'           
 
-    borg prune -v --prefix '{hostname}-'             \
-    --keep-daily=7 --keep-weekly=4 --keep-monthly=6  \
-    --keep-yearly=-1
+    # borg prune -v --prefix '{hostname}-'             \
+    # --keep-daily=14 --keep-weekly=4 --keep-monthly=6  \
+    # --keep-yearly=-1
 
     if [ $? -ne 0 ]; then
         notify-send "Error" "Check journalctl"
