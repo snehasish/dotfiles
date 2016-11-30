@@ -17,11 +17,12 @@ else
     borg create -C lz4 -v --stats              \
     ::'{hostname}-{now:%Y-%m-%d}'              \
     ${HOME}                                    \
-    --exclude '/home/*/.cache'           
+    --exclude '/home/*/.cache'                 \
+    --exclude '/home/*/Downloads'              \
+    --exclude '/home/*/.steam'              
 
-    # borg prune -v --prefix '{hostname}-'             \
-    # --keep-daily=14 --keep-weekly=4 --keep-monthly=6  \
-    # --keep-yearly=-1
+    borg prune -v --prefix '{hostname}-'             \
+    --keep-daily=14 --keep-weekly=4 --keep-monthly=6 
 
     if [ $? -ne 0 ]; then
         notify-send "Error" "Check journalctl"

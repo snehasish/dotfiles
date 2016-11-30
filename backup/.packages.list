@@ -1465,7 +1465,7 @@ libreoffice-common				install
 libreoffice-core				install
 libreoffice-draw				install
 libreoffice-gnome				install
-libreoffice-gtk					install
+libreoffice-gtk2				install
 libreoffice-help-en-us				install
 libreoffice-impress				install
 libreoffice-java-common				install
@@ -1578,6 +1578,7 @@ libswscale-ffmpeg3:amd64			install
 libsystemd0:amd64				install
 libsystemd0:i386				install
 libtag1v5:amd64					install
+libtag1v5:i386					install
 libtag1v5-vanilla:amd64				install
 libtag1v5-vanilla:i386				install
 libtaglib2.1-cil				install
@@ -2241,6 +2242,7 @@ signon-ui-x11					install
 signond						install
 silversearcher-ag				install
 simple-scan					install
+skype:i386					install
 smbclient					install
 sni-qt:amd64					install
 software-properties-common			install
@@ -2251,6 +2253,7 @@ speech-dispatcher-audio-plugins:amd64		install
 ssh-askpass-gnome				install
 sshfs						install
 ssl-cert					install
+steam:i386					install
 stow						install
 strace						install
 streamer					install
@@ -2273,7 +2276,6 @@ sysvinit-utils					install
 t1utils						install
 tar						install
 tcl						install
-tcl-expect:amd64				install
 tcl8.6						install
 tcpd						install
 tcpdump						install
@@ -2293,6 +2295,7 @@ tlp-rdw						install
 tomboy						install
 toshset						install
 tp-smapi-dkms					install
+traceroute					install
 transmission-common				install
 transmission-gtk				install
 ttf-ubuntu-font-family				install
