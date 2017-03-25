@@ -1,5 +1,5 @@
 set mbox_type=maildir
-set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set spell spelllang=en"'
+set editor='vim + -c "set spell spelllang=en"'
 set send_charset="utf-8"
 set realname="Snehasish Kumar"
 set use_from=yes 

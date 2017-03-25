@@ -34,6 +34,8 @@ autorun-x-content-ignore=@as []
 autorun-x-content-open-folder=@as []
 
 [desktop/screensaver]
+screensaver-name=''
+ask-for-away-message=false
 lock-enabled=true
 
 [desktop/wm/preferences]

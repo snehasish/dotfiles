@@ -8,7 +8,7 @@ maxsyncaccounts = 2
 localrepository = sfu-local
 remoterepository = sfu-remote
 status_backend = sqlite
-autorefresh = 2.5
+autorefresh = 1
 
 [Repository sfu-local]
 type = Maildir
@@ -27,7 +27,7 @@ maxconnections = 2
 localrepository = zoho-local
 remoterepository = zoho-remote
 status_backend = sqlite
-autorefresh = 2.5
+autorefresh = 1
 
 [Repository zoho-local]
 type = Maildir

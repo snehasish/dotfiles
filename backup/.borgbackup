@@ -22,7 +22,7 @@ else
     --exclude '/home/*/.steam'              
 
     borg prune -v --prefix '{hostname}-'             \
-    --keep-daily=14 --keep-weekly=4 --keep-monthly=6 
+    --keep-daily=30 --keep-weekly=26 --keep-monthly=12
 
     if [ $? -ne 0 ]; then
         notify-send "Error" "Check journalctl"
