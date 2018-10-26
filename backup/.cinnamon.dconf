@@ -29,9 +29,9 @@ move-to-workspace-left=['<Primary><Shift><Alt>h']
 move-to-workspace-right=['<Primary><Shift><Alt>l']
 
 [desktop/media-handling]
-autorun-x-content-start-app=['x-content/unix-software']
+autorun-x-content-start-app=['x-content/unix-software', 'x-content/image-dcf']
 autorun-x-content-ignore=@as []
-autorun-x-content-open-folder=@as []
+autorun-x-content-open-folder=['x-content/image-dcf']
 
 [desktop/screensaver]
 screensaver-name=''

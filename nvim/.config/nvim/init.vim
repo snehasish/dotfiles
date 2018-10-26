@@ -4,30 +4,23 @@ autocmd! bufwritepost .vimrc source %
 " Not compatible with VI
 set nocompatible
 
-" Loadup Vundle
-filetype off
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mkitt/tabline.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'lifepillar/vim-solarized8'
+Plug 'machakann/vim-sandwich'
+Plug 'Valloric/YouCompleteMe'
+Plug 'dart-lang/dart-vim-plugin'
+call plug#end()
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
+set termguicolors
+set background=dark
+colorscheme solarized8
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'mkitt/tabline.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'godlygeek/tabular'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
-
-call vundle#end()    
-filetype plugin indent on  
+" Remove this later https://github.com/lifepillar/vim-solarized8/issues/27
+let g:solarized_termtrans=1
 
 " Indentation 
 set autoindent
@@ -48,8 +41,8 @@ set number
 syntax on 
 
 " Tab settings
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Timeout to Normal mode
@@ -71,53 +64,23 @@ set incsearch
 set smartcase
 
 
-" Theme settings
-colorscheme molokai
-set t_Co=256
-let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
-
 " Powerline fonts for vim-airline 
 " Remember to set encoding in xshell
 let g:airline_powerline_fonts = 1
 
 " Airline theme to match
-let g:airline_theme = "molokai"
+"let g:airline_theme = "molokai"
 
 " Airline tabs for open buffers -- Install tabline
 let g:airline#extensions#tabline#enabled = 1
-
-" Reindent the entire file
-map <F7> mzgg=G`z<CR>
-
-" Center line in Normal mode
-nmap <space> zz
 
 " Center while searching
 nmap n nzz
 nmap N Nzz
 
-" Open empty files in insert mode
-" autocmd VimEnter * if empty(expand("%")) | startinsert | endif
-
-" You complete me
-
-" Vim markdown folding disabled
-let g:vim_markdown_folding_disabled=1
-
-" No Arrowkeys
-inoremap <LEFT> <NOP>
-inoremap <RIGHT> <NOP>
-inoremap <UP> <NOP>
-inoremap <DOWN> <NOP>
-
 " Next and previous buffer
-nmap <C-n> :bnext<CR>
-nmap <C-m> :bprev<CR>
-
-" Split file, 2 columns with scroll bind
-noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+nmap <A-n> :bnext<CR>
+nmap <A-m> :bprev<CR>
 
 " Relative Line Numbers
 set relativenumber
